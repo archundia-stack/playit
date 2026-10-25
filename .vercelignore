@@ -1,0 +1,7 @@
+data/
+.env
+.env.*
+!.env.example
+test/
+scripts/
+.DS_Store

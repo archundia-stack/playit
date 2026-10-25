@@ -1,0 +1,14 @@
+{
+  "name": "labelgrid-portal",
+  "version": "0.1.0",
+  "description": "Prototipo de portal propio de distribución musical con capa de entrega intercambiable (LabelGrid / Mock).",
+  "type": "module",
+  "private": true,
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "start": "node src/server.js",
+    "start:mock": "PROVIDER=mock node src/server.js",
+    "test": "node --test \"test/*.test.js\"",
+    "check:spec": "node scripts/check-spec.js"
+  }
+}

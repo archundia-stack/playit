@@ -1,0 +1,25 @@
+# Dependencias y builds
+node_modules/
+.next/
+out/
+build/
+dist/
+coverage/
+
+# Vercel (vínculo local del proyecto y tokens de la CLI)
+.vercel/
+
+# Variables de entorno y secretos (solo se sube la plantilla)
+.env
+.env.*
+!.env.example
+
+# Datos locales: base JSON y archivos subidos
+data/
+
+# Sistema y editores
+.DS_Store
+*.log
+npm-debug.log*
+.idea/
+.vscode/
