@@ -100,3 +100,5 @@ code { background: var(--line); padding: 1px 5px; border-radius: 3px; font-size:
 .history { margin: 0; padding: 0; list-style: none; display: grid; gap: 4px; font-size: .88rem; } .history li { display: flex; gap: 10px; } .history time { color: var(--slate); min-width: 135px; } .history .no { color: var(--bad); }
 #toasts { position: fixed; right: 16px; bottom: 16px; display: grid; gap: 8px; z-index: 20; } .toast { background: var(--ink); color: var(--paper); padding: 10px 14px; border-radius: 4px; max-width: 380px; } .toast.bad { background: var(--bad); color: #fff; }
 dialog { border: 1px solid var(--line-strong); border-radius: 6px; padding: 20px; max-width: 440px; background: var(--panel); color: var(--ink); } dialog::backdrop { background: #0008; } dialog p { margin-bottom: 18px; }
+.rail .rail-home { margin-top: auto; font-size: .85rem; color: #8d97a8; } .rail-home + .rail-foot { margin-top: 0; }
+@media (max-width: 800px) { .rail .rail-home { margin-top: 0; } }

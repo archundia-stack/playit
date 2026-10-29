@@ -3,27 +3,124 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Portal de distribución</title>
+  <title>Playit · Distribución digital de música</title>
+  <meta name="description" content="Distribuye tu música en Spotify, Apple Music, YouTube Music, TikTok y más sin pagar cuota. Te quedas con el 70% de tus regalías.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/landing.css">
 </head>
-<body>
+<body class="landing">
   <a class="skip" href="#main">Saltar al contenido</a>
-  <div class="shell">
-    <nav class="rail" aria-label="Principal">
-      <a class="brand" href="#/"><span class="brand-mark" aria-hidden="true"></span><span>Distribuidora</span></a>
-      <a href="#/" data-nav="panel">Panel</a>
-      <a href="#/catalogo" data-nav="catalogo">Catálogo</a>
-      <a href="#/regalias" data-nav="regalias">Regalías</a>
-      <a href="#/conexion" data-nav="conexion">Conexión</a>
-      <div class="rail-foot" id="provider-badge"></div>
-    </nav>
-    <main id="main" tabindex="-1"></main>
-  </div>
-  <div id="toasts" role="status" aria-live="polite"></div>
-  <dialog id="confirm"><form method="dialog"><p id="confirm-text"></p><div class="row end"><button value="no" class="btn ghost">Cancelar</button><button value="yes" class="btn primary" id="confirm-yes">Confirmar</button></div></form></dialog>
-  <script type="module" src="app.js"></script>
+
+  <header class="top">
+    <div class="wrap top-in">
+      <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span><span>Playit</span></a>
+      <nav class="top-nav" aria-label="Principal">
+        <a href="#como-funciona">Cómo funciona</a>
+        <a href="#precio">Precio</a>
+        <a href="#sellos">Sellos</a>
+        <a class="btn primary" href="/portal/">Entrar al portal</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section class="hero">
+      <div class="wrap hero-in">
+        <div class="hero-copy">
+          <p class="eyebrow">Distribución digital hecha en México</p>
+          <h1>Lleva tu música a todas las plataformas. Gratis.</h1>
+          <p class="lede">Sube tu lanzamiento una vez y Playit lo entrega a Spotify, Apple Music, YouTube Music, TikTok, Amazon Music, Deezer y más. No pagas cuota: te quedas con el 70% de lo que generes.</p>
+          <div class="row">
+            <a class="btn primary big" href="/portal/">Entrar al portal de distribución</a>
+            <a class="btn ghost big" href="#como-funciona">Ver cómo funciona</a>
+          </div>
+        </div>
+
+        <figure class="hero-demo" aria-label="Ejemplo del estado de entrega de un lanzamiento">
+          <div class="demo-head">
+            <span class="cover" aria-hidden="true"></span>
+            <div><b>Noches de Sinaloa</b><small>Sencillo · 3 pistas</small></div>
+            <span class="chip live">En vivo</span>
+          </div>
+          <div class="lanes">
+            <div class="lane" data-state="live"><span>Spotify</span><div class="track"><i class="on"></i><i class="on"></i><i class="on"></i></div><span class="lane-state">En vivo</span></div>
+            <div class="lane" data-state="live"><span>Apple Music</span><div class="track"><i class="on"></i><i class="on"></i><i class="on"></i></div><span class="lane-state">En vivo</span></div>
+            <div class="lane" data-state="live"><span>YouTube Music</span><div class="track"><i class="on"></i><i class="on"></i><i class="on"></i></div><span class="lane-state">En vivo</span></div>
+            <div class="lane" data-state="delivered"><span>TikTok</span><div class="track"><i class="on"></i><i class="on"></i><i></i></div><span class="lane-state">Entregado</span></div>
+            <div class="lane" data-state="processing"><span>Amazon Music</span><div class="track"><i class="on"></i><i></i><i></i></div><span class="lane-state">En proceso</span></div>
+          </div>
+          <figcaption>Así ves en el portal el avance de tu lanzamiento en cada plataforma.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="band" id="como-funciona">
+      <div class="wrap">
+        <h2>Cómo funciona</h2>
+        <ol class="steps">
+          <li><b>1</b><h3>Sube tu lanzamiento</h3><p>Audio, portada, créditos y compositores en un solo formulario. Revisamos que todo cumpla antes de enviarlo.</p></li>
+          <li><b>2</b><h3>Lo entregamos</h3><p>Tu música llega a las plataformas que elijas, con ISRC y UPC. Sigues el estado de cada una paso a paso.</p></li>
+          <li><b>3</b><h3>Cobras tus regalías</h3><p>Ves cuánto generas por plataforma, país y canción, y recibes el 70% de lo que ganes.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="band alt" id="precio">
+      <div class="wrap price">
+        <div>
+          <h2>Un solo precio: solo ganamos si tú ganas</h2>
+          <p class="lede">Otras distribuidoras cobran una cuota anual aunque tu música no genere nada. En Playit no pagas por distribuir: retenemos el 30% de las regalías y tú recibes el 70%.</p>
+        </div>
+        <div class="split" role="img" aria-label="De cada 100 pesos de regalías, 70 son para ti y 30 para Playit">
+          <div class="split-bar"><span class="you" style="flex:70">70%</span><span class="us" style="flex:30">30%</span></div>
+          <div class="split-legend"><span><i class="you"></i>Para ti</span><span><i class="us"></i>Playit</span></div>
+          <dl class="facts">
+            <div><dt>Cuota por distribuir</dt><dd>$0</dd></div>
+            <div><dt>Tu parte de las regalías</dt><dd>70%</dd></div>
+            <div><dt>Facturación</dt><dd>En pesos, con CFDI</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section class="band">
+      <div class="wrap">
+        <h2>Por qué Playit</h2>
+        <ul class="perks">
+          <li><h3>Precios en pesos</h3><p>Sin cuotas en dólares ni sorpresas por el tipo de cambio.</p></li>
+          <li><h3>Factura CFDI</h3><p>Facturamos en México para que tus regalías estén en regla.</p></li>
+          <li><h3>Soporte en español</h3><p>Personas que entienden la música mexicana y te responden en tu idioma.</p></li>
+          <li><h3>Tu catálogo es tuyo</h3><p>Conservas tus ISRC y UPC. Si ya distribuyes en otro lado, puedes migrar sin perder tus números.</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="band dark" id="sellos">
+      <div class="wrap price">
+        <div>
+          <h2>¿Tienes un sello o manejas artistas?</h2>
+          <p class="lede">Administra el catálogo de todos tus artistas desde un mismo portal, con la misma comisión del 30%, reportes por artista y atención directa.</p>
+        </div>
+        <div class="row"><a class="btn primary big" href="/portal/">Entrar al portal</a></div>
+      </div>
+    </section>
+
+    <section class="band final">
+      <div class="wrap final-in">
+        <h2>¿Listo para tu próximo lanzamiento?</h2>
+        <a class="btn primary big" href="/portal/">Entrar al portal de distribución</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot-in">
+      <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span><span>Playit</span></a>
+      <small>© 2026 Playit · Distribución digital de música desde México</small>
+    </div>
+  </footer>
 </body>
 </html>

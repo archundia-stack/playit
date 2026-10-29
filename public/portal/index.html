@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portal de distribución · Playit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Saltar al contenido</a>
+  <div class="shell">
+    <nav class="rail" aria-label="Principal">
+      <a class="brand" href="#/"><span class="brand-mark" aria-hidden="true"></span><span>Playit</span></a>
+      <a href="#/" data-nav="panel">Panel</a>
+      <a href="#/catalogo" data-nav="catalogo">Catálogo</a>
+      <a href="#/regalias" data-nav="regalias">Regalías</a>
+      <a href="#/conexion" data-nav="conexion">Conexión</a>
+      <a href="/" class="rail-home">← Volver al inicio</a>
+      <div class="rail-foot" id="provider-badge"></div>
+    </nav>
+    <main id="main" tabindex="-1"></main>
+  </div>
+  <div id="toasts" role="status" aria-live="polite"></div>
+  <dialog id="confirm"><form method="dialog"><p id="confirm-text"></p><div class="row end"><button value="no" class="btn ghost">Cancelar</button><button value="yes" class="btn primary" id="confirm-yes">Confirmar</button></div></form></dialog>
+  <script type="module" src="/app.js"></script>
+</body>
+</html>
