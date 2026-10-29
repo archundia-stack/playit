@@ -55,8 +55,10 @@ export async function streamToFile(req, dest, maxBytes) {
 const MIME = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8', '.svg': 'image/svg+xml', '.json': 'application/json', '.png': 'image/png', '.ico': 'image/x-icon' };
 
 export function serveStatic(res, root, urlPath) {
-  const rel = urlPath === '/' ? 'index.html' : decodeURIComponent(urlPath).replace(/^\/+/, '');
-  const file = path.resolve(root, rel);
+  const rel = decodeURIComponent(urlPath).replace(/^\/+/, '');
+  let file = path.resolve(root, rel);
+  // Índice de carpeta: / sirve la landing y /portal sirve el portal.
+  if (fs.existsSync(file) && fs.statSync(file).isDirectory()) file = path.join(file, 'index.html');
   if (!file.startsWith(root + path.sep) && file !== root) return false;
   if (!fs.existsSync(file) || !fs.statSync(file).isFile()) return false;
   res.writeHead(200, { 'content-type': MIME[path.extname(file)] ?? 'application/octet-stream', 'cache-control': 'no-cache' });
