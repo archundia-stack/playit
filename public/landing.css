@@ -96,6 +96,19 @@ h1, h2, h3, p { margin: 0; }
 .card .role { margin-bottom: 20px; font-size: 14px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
 .card.lime-border .role { color: var(--lime); }
 
+/* Planes */
+.plans { display: grid; grid-template-columns: 1fr 1fr; border: 3px solid #000; }
+.plan { display: flex; flex-direction: column; gap: 16px; padding: 32px; }
+.plan + .plan { border-left: 3px solid #000; }
+.plan.featured { background: var(--lime); }
+.plan-tag { font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.plan h3 { font: 900 clamp(36px, 4vw, 56px)/1 var(--display); letter-spacing: -.03em; text-transform: uppercase; }
+.plan-price { font-weight: 700; text-transform: uppercase; letter-spacing: .04em; }
+.plan ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; flex: 1; }
+.plan li { padding-left: 22px; position: relative; }
+.plan li::before { content: "/"; position: absolute; left: 0; font-weight: 700; }
+.plan .btn { align-self: flex-start; }
+
 /* Cierre */
 .mega2 { margin-bottom: 56px; font: 900 clamp(44px, 9vw, 140px)/.9 var(--display); letter-spacing: -.045em; text-transform: uppercase; }
 .inv { background: #000; color: var(--lime); padding: 0 12px; }
@@ -129,6 +142,8 @@ h1, h2, h3, p { margin: 0; }
   .stats > div:nth-child(3) { border-left: 0; }
   .stats > div:nth-child(n+3) { border-top: 3px solid #000; }
   .cards { grid-template-columns: 1fr; }
+  .plans { grid-template-columns: 1fr; }
+  .plan + .plan { border-left: 0; border-top: 3px solid #000; }
 }
 @media (max-width: 560px) {
   .wrap { padding: 0 16px; }
